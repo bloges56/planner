@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Planner
 {
@@ -39,11 +40,17 @@ namespace Planner
             Northport.Construct();
             Northport.Purchase("Louise Fox");
 
-            //log all of the buildings
-            Beach.printBuilding();
-            Peabody.printBuilding();
-            Hopkin.printBuilding();
-            Northport.printBuilding();
+            //create a list of the buildings
+            List<Building> buildings = new List<Building>()
+            {
+                Northport, Hopkin, Beach, Peabody
+            };
+
+            //create a new city
+            City myCity = new City("Bradyopolis", "Solomon Paine", buildings);
+
+            //log the city
+            myCity.printCity();
         }
     }
 }
